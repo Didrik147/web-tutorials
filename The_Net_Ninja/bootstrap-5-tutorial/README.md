@@ -13,8 +13,8 @@
 - [x] Tutorial 9
 - [x] Tutorial 10
 - [x] Tutorial 11
-- [ ] Tutorial 12
-- [ ] Tutorial 13
+- [x] Tutorial 12
+- [x] Tutorial 13
 - [ ] Tutorial 14
 - [ ] Tutorial 15
 - [ ] Tutorial 16
