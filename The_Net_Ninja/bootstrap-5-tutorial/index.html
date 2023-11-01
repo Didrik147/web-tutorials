@@ -438,7 +438,11 @@
 
             <div class="row justify-content-center">
                 <div class="col-md-8 text-center">
-                    
+                    <p class="text-muted my-4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste eligendi aperiam magnam eum unde cupiditate beatae? Incidunt qui voluptatem animi quaerat vel odio deserunt natus dolorum, repudiandae harum eum iste est temporibus obcaecati nam quia consectetur officia dolor corrupti eligendi!</p>
+
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#reg-modal">
+                        Register for Updates
+                    </button>
                 </div>
             </div>
         </div>
@@ -446,6 +450,27 @@
 
 
     <!-- Modal itself -->
+    <div class="modal fade" id="reg-modal" tabindex="-1" aria-labelledby="modal-title" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modal-title">Get the Latest Updates</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <div class="modal-body">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea incidunt iure consectetur nostrum aut perferendis, ut tenetur officia fugiat, atque eveniet veniam porro. Sed adipisci nam perferendis. Rem, accusamus mollitia?</p>
+                    <label for="modal-email" class="form-label">Your email address:</label>
+                    <input type="email" class="form-control" id="modal-email" placeholder="e.g. mario@example.com">
+                </div>
+
+                <div class="modal-footer">
+                    <button class="btn btn-primary">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
 
     <!-- Bootstrap Bundle JS -->
