@@ -18,9 +18,9 @@
 - [x] Tutorial 14
 - [x] Tutorial 15
 - [x] Tutorial 16
-- [ ] Tutorial 17
-- [ ] Tutorial 18
-- [ ] Tutorial 19
+- [x] Tutorial 17
+- [x] Tutorial 18
+- [x] Tutorial 19
 - [ ] Tutorial 20
 
 
