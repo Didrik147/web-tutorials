@@ -21,7 +21,7 @@
 - [x] Tutorial 17
 - [x] Tutorial 18
 - [x] Tutorial 19
-- [ ] Tutorial 20
+- [x] Tutorial 20
 
 
 
