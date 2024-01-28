@@ -1,4 +1,22 @@
 "use strict";
+// Classes
+class Invoice {
+    constructor(c, d, a) {
+        this.client = c;
+        this.details = d;
+        this.amount = a;
+    }
+    format() {
+        return `${this.client} owes £${this.amount} for ${this.details}`;
+    }
+}
+const invOne = new Invoice('Mario', 'Work on the Mario website', 250);
+const invTwo = new Invoice('Luigi', 'Work on the Luigi website', 300);
+let invoices = [];
+invoices.push(invOne);
+invoices.push(invTwo);
+invOne.client = 'Yoshi';
+console.log(invoices);
 //const form = document.querySelector('form')!;
 const form = document.querySelector('.new-item-form');
 //console.log(form.children)
