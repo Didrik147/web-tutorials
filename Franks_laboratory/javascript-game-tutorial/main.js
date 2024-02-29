@@ -3,6 +3,7 @@ import {InputHandler} from './input.js'
 
 // Made from the following tutorial:
 // https://youtu.be/c-1dBd1_G8A?si=-l_jhDM6TKKZQbTx
+// Currently at 17:35
 
 window.addEventListener('load', function(){
   const canvas = document.getElementById('canvas1')
