@@ -1,16 +1,24 @@
 <script>
-	let name = 'Didrik';
-	let beltColour = 'Black';
+	let name = "Didrik";
+	let beltColour = "black";
 
 	const handleClick = () => {
-		beltColour = 'Orange'
+		beltColour = "yellow";
+	};
+
+	const handleInput = (e) => {
+		beltColour = e.target.value;
 	};
 </script>
 
 <main>
 	<h1>Hello {name}!</h1>
-	<p>{beltColour} belt</p>
+	<p class="capitalize-first" style="color: {beltColour}">{beltColour} belt</p>
 	<button on:click={handleClick}>Update Belt Colour</button>
+	<!-- <input type="text" on:input={handleInput} value={beltColour}> -->
+
+	<!-- Two-way binding -->
+	 <input type="text" bind:value={beltColour}>
 </main>
 
 <style>
@@ -26,6 +34,10 @@
 		text-transform: uppercase;
 		font-size: 4em;
 		font-weight: 100;
+	}
+
+	.capitalize-first::first-letter {
+		text-transform: uppercase;
 	}
 
 	@media (min-width: 640px) {
