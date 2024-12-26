@@ -1,11 +1,16 @@
 <script>
-	export let name;
+	let name = 'Didrik';
+	let beltColour = 'Black';
+
+	const handleClick = () => {
+		beltColour = 'Orange'
+	};
 </script>
 
 <main>
 	<h1>Hello {name}!</h1>
-	<h2>This is a test</h2>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
+	<p>{beltColour} belt</p>
+	<button on:click={handleClick}>Update Belt Colour</button>
 </main>
 
 <style>
