@@ -1,6 +1,18 @@
 <script>
-	let name = "Didrik";
+	// Based on the following YouTube playlist by Net Ninja:
+	// https://www.youtube.com/playlist?list=PL4cUxeGkcC9hlbrVO_2QFVqVPhlZmz7tO
+
+	let firstName = "Didrik";
+	let lastName = "Roest";
 	let beltColour = "black";
+
+	// Reactive values
+	$: fullName = `${firstName} ${lastName}`;
+	//$: console.log(beltColour);
+	$: {
+		console.log(beltColour);
+		console.log(fullName);
+	}
 
 	const handleClick = () => {
 		beltColour = "yellow";
@@ -12,12 +24,10 @@
 </script>
 
 <main>
-	<h1>Hello {name}!</h1>
-	<p class="capitalize-first" style="color: {beltColour}">{beltColour} belt</p>
-	<button on:click={handleClick}>Update Belt Colour</button>
-	<!-- <input type="text" on:input={handleInput} value={beltColour}> -->
-
+	<p>{fullName} - {beltColour} belt</p>
 	<!-- Two-way binding -->
+	 <input type="text" bind:value={firstName}>
+	 <input type="text" bind:value={lastName}>
 	 <input type="text" bind:value={beltColour}>
 </main>
 
@@ -34,10 +44,6 @@
 		text-transform: uppercase;
 		font-size: 4em;
 		font-weight: 100;
-	}
-
-	.capitalize-first::first-letter {
-		text-transform: uppercase;
 	}
 
 	@media (min-width: 640px) {
