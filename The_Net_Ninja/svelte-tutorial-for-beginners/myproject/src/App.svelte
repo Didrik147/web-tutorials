@@ -23,11 +23,20 @@
 
 </script>
 
-<!-- <Modal message="Hey there again" showModal={showModal} /> -->
-<Modal message="Hey there again" {showModal} on:click={toggleModal} />
+<Modal {showModal} on:click={toggleModal}>
+	<h3>Add a New Person</h3>
+	<form>
+		<input type="text" placeholder="name">
+		<input type="text" placeholder="belt colour">
+		<button>Add Person</button>
+	</form>
+	<!-- <div slot="title">
+		<h3>Add a New Person</h3>
+	</div> -->
+</Modal>
 
 <main>
-	<button on:click|once={toggleModal}>Open Modal</button>
+	<button on:click={toggleModal}>Open Modal</button>
 	{#each people as person (person.id)}
 		<div>
 		  <h4>{person.name}</h4>
