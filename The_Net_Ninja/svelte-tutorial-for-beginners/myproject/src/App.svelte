@@ -2,6 +2,8 @@
 <!-- https://www.youtube.com/playlist?list=PL4cUxeGkcC9hlbrVO_2QFVqVPhlZmz7tO -->
 
 <script>
+  import Modal from './Modal.svelte';
+
 	let people = [
 		{ name: "yoshi", beltColour: "black", age: 25, id: 1 },
 		{ name: "mario", beltColour: "orange", age: 45, id: 2 },
@@ -13,16 +15,9 @@
     people = people.filter((person) => person.id != id)
   }
 
-  let num = 8;
 </script>
 
-{#if num > 20}
-  <p>Greater than 20</p>
-{:else if num > 5}
-  <p>Greater than 5</p>
-{:else}
-  <p>Not greater than 5</p>
-{/if}
+<Modal />
 
 <main>
 	{#each people as person (person.id)}
