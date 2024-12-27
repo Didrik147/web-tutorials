@@ -7,8 +7,6 @@
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <div class="backdrop" class:promo={isPromo} on:click|self >
   <div class="modal">
-<!--     <slot name="title"></slot>
-    <p>Hey there...</p> -->
     <slot></slot>
   </div>
 </div>
