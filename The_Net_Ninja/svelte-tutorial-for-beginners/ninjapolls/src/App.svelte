@@ -23,6 +23,14 @@
       votesA: 9,
       votesB: 15,
     },
+		{
+      id: 2,
+      question: 'Left or right?',
+      answerA: 'Left',
+      answerB: 'Right',
+      votesA: 4,
+      votesB: 1,
+    },
   ];
 
 	const handleAdd = (e) => {
@@ -32,6 +40,22 @@
 		activeItem = 'Current Polls';
 	}
 
+	const handleVote = (e) => {
+		const {id, option} = e.detail;
+
+		let copiedPolls = [...polls];
+		let upvotedPoll = copiedPolls.find((poll) => poll.id == id)
+
+		if (option === 'a'){
+			upvotedPoll.votesA++;
+		} 
+		if (option === 'b'){
+			upvotedPoll.votesB++;
+		}
+
+		polls = copiedPolls;
+	}
+
 </script>
 
 <Header />
@@ -39,7 +63,7 @@
 <main>
 	<Tabs {activeItem} {items} on:tabChange={tabChange} />
 	{#if activeItem === 'Current Polls'}
-		<PollList {polls} />
+		<PollList {polls} on:vote={handleVote} />
 	{:else if activeItem === 'Add New Poll'}
 		<CreatePollForm on:add={handleAdd} />
 	{/if}
