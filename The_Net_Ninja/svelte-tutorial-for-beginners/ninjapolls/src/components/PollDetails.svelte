@@ -1,32 +1,38 @@
 <script>
   import Card from "../shared/Card.svelte";
   import PollStore from "../stores/PollStore";
-  
+  import Button from "../shared/Button.svelte";
+
   export let poll;
 
   // Reactive values
   $: totalVotes = poll.votesA + poll.votesB;
-  $: percentA = Math.floor(100*poll.votesA/totalVotes)
-  $: percentB = Math.floor(100*poll.votesB/totalVotes)
+  $: percentA = Math.floor((100 * poll.votesA) / totalVotes);
+  $: percentB = Math.floor((100 * poll.votesB) / totalVotes);
 
   // Handling votes
   const handleVote = (option, id) => {
-    PollStore.update(currentPolls => {
+    PollStore.update((currentPolls) => {
       let copiedPolls = [...currentPolls];
-      let upvotedPoll = copiedPolls.find((poll) => poll.id == id)
+      let upvotedPoll = copiedPolls.find((poll) => poll.id == id);
 
-      if (option === 'a'){
+      if (option === "a") {
         upvotedPoll.votesA++;
-      } 
-      if (option === 'b'){
+      }
+      if (option === "b") {
         upvotedPoll.votesB++;
       }
 
       return copiedPolls;
     });
+  };
 
-		
-  }
+  // Deleting a poll
+  const handleDelete = (id) => {
+    PollStore.update((currentPolls) => {
+      return currentPolls.filter((poll) => poll.id != id);
+    });
+  };
 </script>
 
 <Card>
@@ -34,14 +40,17 @@
     <h3>{poll.question}</h3>
     <p>Total votes: {totalVotes}</p>
     <!-- svelte-ignore a11y-click-events-have-key-events -->
-    <div class="answer" on:click={() => handleVote('a', poll.id)}>
+    <div class="answer" on:click={() => handleVote("a", poll.id)}>
       <div class="percent percent-a" style="width: {percentA}%"></div>
       <span>{poll.answerA} ({poll.votesA})</span>
     </div>
     <!-- svelte-ignore a11y-click-events-have-key-events -->
-    <div class="answer" on:click={() => handleVote('b', poll.id)}>
+    <div class="answer" on:click={() => handleVote("b", poll.id)}>
       <div class="percent percent-b" style="width: {percentB}%"></div>
       <span>{poll.answerB} ({poll.votesB})</span>
+    </div>
+    <div class="delete">
+      <Button flat={true} on:click={() => handleDelete(poll.id)}>Delete</Button>
     </div>
   </div>
 </Card>
@@ -77,10 +86,14 @@
   }
   .percent-a {
     border-left: 4px solid #d91b42;
-    background: rgba(217,27,66, 0.2);
+    background: rgba(217, 27, 66, 0.2);
   }
   .percent-b {
     border-left: 4px solid #45c496;
-    background: rgba(69,196,150, 0.2);
+    background: rgba(69, 196, 150, 0.2);
+  }
+  .delete {
+    margin-top: 30px;
+    text-align: center;
   }
 </style>
