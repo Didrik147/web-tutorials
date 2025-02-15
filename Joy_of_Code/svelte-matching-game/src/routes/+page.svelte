@@ -53,7 +53,7 @@
 
   $: maxMatches === matches.length && gameWon()
 
-  $: console.log(state, selected, matches)
+  $: console.log({ state, selected, matches })
 </script>
 
 {#if state === 'start'}
