@@ -1,3 +1,6 @@
+<!-- Made by using the following tutorial by Joy of Code: -->
+<!-- https://www.youtube.com/watch?v=w2q9caYXgkg -->
+
 <script lang="ts">
   import {emoji} from './emoji'
 
@@ -9,6 +12,8 @@
   let maxMatches = grid.length / 2
   let selected: number[] = []
   let matches: string[] = []
+  let timerId: number | null = null
+  let time = 20
 
   function createGrid() {
     let cards = new Set<string>()
