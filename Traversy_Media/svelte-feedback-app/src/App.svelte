@@ -1,6 +1,7 @@
 <script>
 	let firstName = 'Didrik'
 	let lastName = 'Roest'
+	let color = 'blue'
 
 	$: name = firstName + ' ' + lastName
 </script>
