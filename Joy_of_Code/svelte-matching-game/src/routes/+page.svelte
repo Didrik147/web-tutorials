@@ -7,7 +7,7 @@
   type State = 'start' | 'playing' | 'paused' | 'won' | 'lost'
 
   let state: State = 'start'
-  let size = 10
+  let size = 20
   let grid = createGrid()
   let maxMatches = grid.length / 2
   let selected: number[] = []
