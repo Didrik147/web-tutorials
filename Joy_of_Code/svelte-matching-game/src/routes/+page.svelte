@@ -15,7 +15,6 @@
   let timerId: number | null = null
   let time = 20
 
-
   function startGameTimer() {
     function countdown(){
       state != 'paused' && (time -= 1)
