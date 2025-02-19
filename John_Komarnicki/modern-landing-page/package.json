@@ -1,0 +1,7 @@
+{
+  "name": "modern-landing-page",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.4.17"
+  }
+}
