@@ -1,5 +1,11 @@
 {
   "name": "modern-landing-page",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "build": "tailwindcss -i ./src/input.css -o ./public/style.css",
+    "watch": "tailwindcss -i ./src/input.css -o ./public/style.css --watch"
+  },
   "license": "ISC",
   "devDependencies": {
     "tailwindcss": "^3.4.17"
